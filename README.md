@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Freke.dev — Next.js Portfolio
 
-## Getting Started
+A production-oriented personal portfolio built with Next.js App Router and TypeScript.
 
-First, run the development server:
+## Architecture
+
+- **Server-first rendering:** pages and content are server components by default.
+- **Isolated client behaviour:** mobile navigation, reveal animations and terminal animation are client components only where interaction is required.
+- **Data-driven UI:** portfolio content lives in `app/data/portfolio.ts`, keeping content separate from presentation.
+- **Reusable components:** project cards, section headings, timelines and navigation are independently composed.
+- **Route-level case studies:** projects are available at `/work/[slug]` and generated statically from the project data.
+- **Operational resilience:** `not-found.tsx` and `error.tsx` provide explicit failure states.
+- **Quality gates:** ESLint, TypeScript checks, Prettier and GitHub Actions CI are configured.
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Verify
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint
+npm run typecheck
+npm run build
+npm run format:check
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+The application is designed for Vercel or any Node-compatible Next.js deployment.
 
-To learn more about Next.js, take a look at the following resources:
+## Engineering decisions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Keep business/content data independent from UI components.
+2. Prefer server components and add `use client` only for browser APIs or interaction.
+3. Keep external links explicit and protected with `noopener noreferrer`.
+4. Respect `prefers-reduced-motion` for animated UI.
+5. Keep route-level project content statically generated for fast delivery.
