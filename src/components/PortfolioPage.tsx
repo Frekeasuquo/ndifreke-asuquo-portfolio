@@ -68,8 +68,8 @@ export function PortfolioPage() {
                 </section>
                 <section id='experience' className='section section-border' aria-labelledby='experience-title'>
                     <div className="container">
-                        <SectionHeading id='experience-title' command='$ tail -f experince.log' title="Where I've worked"/>
-                        <p className='section-label'>$ cat experinces.freke</p>
+                        <SectionHeading id='experience-title' command='$ tail -f experience.log' title="Where I've worked"/>
+                        <p className='section-label'>$ cat experiences.freke</p>
                         <ExperinceTimeline items={experience} />
                     </div>
                 </section>

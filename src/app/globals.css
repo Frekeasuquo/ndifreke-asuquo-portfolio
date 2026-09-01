@@ -301,7 +301,9 @@ h1 span {
 
 .section-label {
   margin-bottom: 10px;
-  color: var(--color-text-subtle);
+  color: #4af626;
+  word-break: break-all;
+  /* color: var(--color-text-subtle); */
 }
 
 .section-title {

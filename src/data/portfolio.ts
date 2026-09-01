@@ -79,7 +79,7 @@ export const experience: readonly Experience[] = [
         title: 'Full-Stack Developer',
         company: 'GOMYCODE — Lagos / London (hybrid-remote)',
         achievements: [
-        'Migrated core platform architecture to Next.js, improving traffic and SEO visibility by 30%.',
+        'Engineered and executed the migration of core platform architecture to Next.js, leveraging Server-Side Rendering (SSR) to reduce initial load times and increase global organic traffic/SEO visibility by 30%.',
         'Built a full-stack e-commerce engine with Stripe webhooks and production reliability of 99.9% uptime.',
         'Established CI/CD and Git standards using GitHub Actions and delivered internal workshops on Git, AWS and Firebase.',
         ],    
